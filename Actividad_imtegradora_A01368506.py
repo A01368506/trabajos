@@ -28,7 +28,7 @@ subset_data2 = mapa
 police_district_input = st.sidebar.multiselect(
   'Police District',
      
-mapa.groupby('Police District' ).count().reset_index()['Police District']. tolist())
+mapa.groupby('Police District').count().reset_index()['Police District']. tolist())
 if len(police_district_input) > 0:
      subset_data2 = mapa[mapa['Police District'].isin(police_district_input)]
     
@@ -39,7 +39,7 @@ neighborhood_input = st.sidebar.multiselect(
 subset_data2.groupby('Neighborhood').count().reset_index()('Neighborhood').tolist())
 if len(neighborhood_input) > 0:
      subset_data1 =
-subset_data2(subset _data2['Neighborhood'].isin(neighborhood_input)
+     subset_data2(subset _data2['Neighborhood'].isin(neighborhood_input)
              
 subset_data = subset_data1
 incident_input= st.sidebar.multiselect(
