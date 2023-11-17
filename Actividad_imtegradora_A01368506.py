@@ -20,7 +20,7 @@ mapa['Neighborhood'] = df['Analysis Neighborhood']
 mapa['Incident Category'] = df['Incident Category']
 mapa['Incident Subcategory'] = df['Incident Subcategory']
 mapa['Resolution'] = df['Resolution']
-mapa['lat') = df['Latitude']
+mapa['lat'] = df['Latitude']
 mapa['lon'] = df['Longitade']
 mapa = mapa.dropna()
      
