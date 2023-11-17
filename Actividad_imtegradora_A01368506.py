@@ -38,8 +38,7 @@ neighborhood_input = st.sidebar.multiselect(
      'Neighborhood',
 subset_data2.groupby('Neighborhood').count().reset_index()('Neighborhood').tolist())
 if len(neighborhood_input) > 0:
-     subset_data1 =
-     subset_data2(subset_data2['Neighborhood'].isin(neighborhood_input)
+     subset_data1 = subset_data2(subset_data2['Neighborhood'].isin(neighborhood_input)
              
 subset_data = subset_data1
 incident_input= st.sidebar.multiselect(
