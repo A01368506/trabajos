@@ -4,6 +4,10 @@ import pandas as pd
 import streamlit as st
 from PIL import Image
 
+@st.cache
+def run_fxn(n: int) -> list:
+    return range(n)
+
 """Generación de la webapp con streamlit"""
 # Definir titulo
 st.title("Titulo: Analitica de Datos")
@@ -55,4 +59,57 @@ st.subheader("Slider")
 level = st.slider("Cual es tu nivel?", 1, 5)
 st.write("Nivel:", level)
 
-  
+
+st.subheader("Buttons")
+#Buttons
+if st.button("Acerca"):
+    st.text("streamlit es cool")
+else:
+    st.text("")
+st.header("Como recibir una entrada y procesarla con streamlit?")
+st.subheader("Recibiendo texto")
+#Recibiendo texto 
+firstname= st.text_input("Escriba su nombre:")
+if st.button("Aceptar"):
+    result = firtname.title()
+    st.success(result)
+st.subheader("Area de texto")
+#text Area 
+message = st.text_area("Escriba un mensaje")
+if st.button("Aceptar"):
+    result = message.title()
+    st.success(result)
+st.subheader("Entrada de fecha:")
+#Date input 
+today = st.date_input("Hoy es", datetime.datetime.now())
+st.text(f"{today}")
+st.subheader("Entrada de tiempo")
+#time 
+the_time
+the_time = st.time_input("La hora es:", datetime.time())
+st.text(f"{the_time}")    
+st.header("Trabajar con archivos de imagenes, audio o videos")
+#images 
+st.subheader("Archivo de imagen")
+img = Image.open("")
+st.image(img,width=300, caption="Simple Imagen")
+
+st.header("Otras opciones que permite la función write")
+#Writing text/super fxn 
+st.subheader("texto con write")
+st.write("Texto con write")
+st.write(range(10))
+st.header("Desplegando código puro y json")
+st.subheader("codigo puro")
+st.code("import numpy as np")
+with st.echo():
+    df=pd.DataFrame()
+st.subheader("Desplegando json")
+st.text("Mostrando JSON")
+st.json("nombre": "Jhon","apellido": "Doe", "genero": "masculino})
+st.header("Mostrar barra de progreso, spinner y ballons")
+st.subheader("Barra de progreso")
+my_bar = st.progress(0)
+for p in range(10):
+    my_bar.progress(p + 1)
+st.subheader("spinner")
